@@ -7,7 +7,7 @@ function buildPage () {
   const query = window.location.search;
   const urlParams = new URLSearchParams(query);
   const id = urlParams.get("movieId");
-  const api_key = "3f6619a9ceef62224b97a825bd53616e";
+  const api_key = "3f6619a9ceef62224b97a825bd53616eb";
   const months = ['January', 'February', 'March', 'April', 'May', 'June',
    'July', 'August', 'September', 'October', 'November', 'December'];
   var newDate = "";
@@ -31,14 +31,14 @@ function buildPage () {
 
       if (movie.poster_path != null && movie.poster_path != "") {
           document.getElementById("results").innerHTML +=
-          `<div class="resultBanner">${data.title}<a href=
-          "moviedatabase.html?movieId=${data.id}" alt=
+          `<div id="titleBanner">${data.title}<a href=
+          "movieDetails.html?movieId=${data.id}" alt=
           "${data.title}"><img src=
           "https://image.tmdb.org/t/p/w500${data.poster_path}"></a>${newDate}</div>`;
       } else {
         document.getElementById("results").innerHTML +=
-         `<div class="resultNoImage"><a href=
-         "moviedatabase.html?movieId=${data.id}">${data.title}</a>${newDate}</div>`;
+         `<div id="titleBannerNoImage"><a href=
+         "movieDetails.html?movieId=${data.id}">${data.title}</a>${newDate}</div>`;
       }
 
       if (movie.overview != null && movie.overview != "") {
@@ -66,19 +66,38 @@ function buildPage () {
         .then(data => {
           if (data.cast != 0) {
             document.getElementById("results").innerHTML +=
+            `<h2> Cast of ${movie.title} </h2>`;
+            document.getElementById("results").innerHTML +=
             `<ul id="castList"></ul>`;
             for (i in data.cast) {
-              if (data.cast[i].profile_path != null && data.cast[i].profile_path != "") {
-                document.getElementById("castList").innerHTML +=
-                `<li class="castMember"><img src=
-                "https://image.tmdb.org/t/p/w500${data.cast[i].profile_path}" alt="${data.cast[i].name}"><a href=
-                "actors.html?actorId=${data.cast[i].id}" alt=
-                "${data.cast[i].name}">${data.cast[i].name}</a> as ${data.cast[i].character}</li>`;
+              if (data.cast[i].character != "" && data.cast[i].character != null) {
+                if (data.cast[i].profile_path != null && data.cast[i].profile_path != "") {
+                  document.getElementById("castList").innerHTML +=
+                  `<li class="castMember"><a href=
+                  "actorDetails.html?actorId=${data.cast[i].id}" alt=
+                  "${data.cast[i].name}"><img src=
+                  "https://image.tmdb.org/t/p/w500${data.cast[i].profile_path}" alt=
+                  "${data.cast[i].name}"></a>${data.cast[i].name} as ${data.cast[i].character}</li>`;
+                } else {
+                  document.getElementById("castList").innerHTML +=
+                  `<li class="castMember"><a href=
+                  "actorDetails.html?actorId=${data.cast[i].id}" alt=
+                  "${data.cast[i].name}">${data.cast[i].name}</a> as ${data.cast[i].character}</li>`;
+                }
               } else {
-                document.getElementById("castList").innerHTML +=
-                `<li class="castMember"><a href=
-                "actors.html?actorId=${data.cast[i].id}" alt=
-                "${data.cast[i].name}">${data.cast[i].name}</a> as ${data.cast[i].character}</li>`;
+                if (data.cast[i].profile_path != null && data.cast[i].profile_path != "") {
+                  document.getElementById("castList").innerHTML +=
+                  `<li class="castMember"><a href=
+                  "actorDetails.html?actorId=${data.cast[i].id}" alt=
+                  "${data.cast[i].name}"><img src=
+                  "https://image.tmdb.org/t/p/w500${data.cast[i].profile_path}" alt=
+                  "${data.cast[i].name}"></a>${data.cast[i].name}</li>`;
+                } else {
+                  document.getElementById("castList").innerHTML +=
+                  `<li class="castMember"><a href=
+                  "actorDetails.html?actorId=${data.cast[i].id}" alt=
+                  "${data.cast[i].name}">${data.cast[i].name}</a></li>`;
+                }
               }
             }
           } else {
