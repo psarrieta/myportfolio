@@ -6,7 +6,7 @@
     <meta name="keywords" content="movie, database, arkansas, cinema, films, actors">
     <meta name="author" content="Pearl Arrieta">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style/main.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <!-- add the SCRIPT later <script src="assets/scripts/.js" defer></script> -->
     <!-- need to add STYLESHEET --> 
     <title>Arkansas Movie Database</title>
@@ -15,7 +15,7 @@
 </head>
 
   <body>
-
+    <div class="container">
     <header>
       <a href="moviedatabase.html"><img src="assets/images/logo.png" alt="logo"></a>
       <h1>Arkansas Movie Database</h1>
@@ -30,15 +30,33 @@
                 <li><a href="../index.html">Back to Portfolio</a></li>
               </ul>
             </div>
+            <form>
+              <div class="form-group">
+                <input type="text" id="inputValue">
+              </div>
+              
+              <button type="submit" id="search">Search a movie </button>
+            </form>
+          </div>
+          <div id="movies-searchable">
+            
           </div>
     </header>
+    </div>
     
+    <h2>Welcome to the Movie Database</h2>
     <section id="quote" class="conatainer">
-      <blockquote>"I know I'm just your uncle, not a parent, but uh, you can tell me things if need to."  <cite>~ MICHAEL SHANNON - Galen (Movie - MUD)</cite></blockquote>
+      <blockquote>"I know I'm just your uncle, not a parent, but uh, you can tell me things if need to."  <cite><br>~ MICHAEL SHANNON <br>- Galen (Movie - MUD)</cite></blockquote>
     </section>
     
+    <script src="./assets/scripts/allMovies.js"></script>
+    
+    <h2>Featured Movies</h2>
+      <p> A feature film, or feature-length film, is a film with a running time long enough to be considered the principal or sole film to fill a program. 
+      The term feature film originally referred to the main, full-length film in a cinema program that also included a short film and often a newsreel. </p>
+    
     <section id="posts" class="container">
-      <h2>Featured Movies</h2>
+      
     <article class="post">
       <header>
         <time class="post-date" datetime="2013-04-26">April 26, 2013</time>
@@ -48,16 +66,16 @@
         </figure>
         <h3> <a href="https://www.themoviedb.org/movie/103731-mud">Mud (2013)</a> </h3>
       </header>
-    <p>Overview -
-Two boys find a fugitive hiding out on an island in the Mississippi River and form a pact to help him reunite with his lover and escape.
+    <p>Two boys find a fugitive hiding out on an island in the Mississippi River and form a pact to help him reunite with his lover and escape.
     </p>
       <footer class="post-meta"> Directed & Written by <a href="https://www.themoviedb.org/person/71872-jeff-nichols">Jeff Nichols</a>
     </article>
+    
     <article class="post">
       <header>
         <time class="post-date" datetime="1996-08-30">August 30, 1996</time>
         <figure>
-          <img src="https://image.tmdb.org/t/p/w188_and_h282_bestv2/y7kYNk6gJMkPx1YfXhXw6fMTstf.jpg" />
+          <img src="https://image.tmdb.org/t/p/w188_and_h282_bestv2/y7kYNk6gJMkPx1YfXhXw6fMTstf.jpg"/>
           <figcaption>SLING BLADE</figcaption>
         </figure>
         <h3> <a href=https://www.themoviedb.org/movie/12498>SLING BLADE</a> </h3>
@@ -66,6 +84,7 @@ Two boys find a fugitive hiding out on an island in the Mississippi River and fo
       </p>
       <footer class="post-meta"> Directed by <a href="https://www.themoviedb.org/person/879-billy-bob-thornton">Billy Bob Thornton</a></footer>
     </article>
+    
     <article class="post">
       <header>
         <time class="post-date" datetime="2013-05-13">May 9, 2013</time>
@@ -78,9 +97,12 @@ Two boys find a fugitive hiding out on an island in the Mississippi River and fo
       <p>The savage murders of three young children sparks a controversial trial of three teenagers accused of killing the kids as part of a satanic ritual.</p>
       <footer class="post-meta"> Screenplay <a href="#">Scott Derrickson</a></footer>
     </article>
+  
   </section>
+  <h6>&copy; | Capstone Project Fall 2020 | Pearl Arrieta | </h6>
   
       <div id="results"></div>
     </div>
+   
   </body>
 </html>

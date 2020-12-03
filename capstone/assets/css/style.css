@@ -1,0 +1,120 @@
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* ---------------Utility Style----------------- */
+
+
+
+/* ---------------Responsive Image----------------- */
+img{
+  max-width:100%;
+  height:auto;
+}
+
+/* ---------------Global Styles----------------- */
+
+
+body{
+  color: #2D3540;
+  font-family: 'Montserrat', sans-serif;
+  margin:0;
+  background: #BCBFBA;
+}
+
+
+#quote blockquote{
+  background: rgba(0,0,0,.15);
+  padding:40px 60px;
+  font-size: 1.2em;
+  border: 8px double grey;
+  border-radius: 16px;
+}
+
+
+#posts {
+  display: flex;
+  justify-content:space-between;
+  }
+
+
+
+#search {
+    color: #ba3a30;
+    background-color: #fff;
+    outline: none;
+    min-height: 38px;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+}
+
+#movies-searchable {
+    margin-top: 20px;
+}
+
+section{
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+}
+
+section img{
+    width: 300px;
+    transition: 250ms all;
+}
+
+img: hover {
+    margin-left: 0 40px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+
+
+#posts {
+  display: flex;
+  justify-content:space-between;
+  }
+
+#content article.post{
+  width:23vw;
+  box-shadow: 0 4px 8px rgba(0,0,0,.4);
+  max-width:320px;
+}
+
+#content article.post:hover{
+  box-shadow: 0 8px 16px rgba(0,0,0,.4);
+}
+
+#content article.post time, #content article.post figcaption{
+  font-size:.8em;
+  color:gray;
+  text-transform:uppercase;
+}
+
+#content article.post figure{
+  margin:10px 0;
+}
+
+#content article.post a{
+  color:#2D3540
+}
+
+#content article.post a:hover{
+  text-decoration:none;
+}
+
+#content article.post p{
+  font-size:.8em;
+  line-height: 1.5em;
+}
+
+#content article.post footer{
+  font-size:.8em;
+}
