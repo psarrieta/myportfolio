@@ -39,7 +39,6 @@ body{
   }
 
 
-
 #search {
     color: #ba3a30;
     background-color: #fff;
@@ -58,63 +57,40 @@ body{
     margin-top: 20px;
 }
 
-section{
-    display: flex;
-    width: 100%;
-    overflow-x: auto;
+
+.resultBanner {
+  display: inline;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 2px 4px 8px rgba(0,0,0,1);
+  max-width:200px;
 }
 
-section img{
-    width: 300px;
-    transition: 250ms all;
+#allMoviesList {
+  display: grid;
+  text-align: center;
+  justify-content: space-around;
+  padding: 10px 10px 10px 10px;
+  grid-template-columns: 200px 200px 200px 200px;
 }
 
-img: hover {
-    margin-left: 0 40px;
-    transform: scale(1.2);
-    cursor: pointer;
+#allMoviesList > div {
+  box-shadow: 5px 5px 15px black;
 }
 
-
-
-#posts {
-  display: flex;
-  justify-content:space-between;
-  }
-
-#content article.post{
-  width:23vw;
-  box-shadow: 0 4px 8px rgba(0,0,0,.4);
-  max-width:320px;
+#allActorsList {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px;
 }
 
-#content article.post:hover{
-  box-shadow: 0 8px 16px rgba(0,0,0,.4);
+#allActorsList > div {
+  box-shadow: 5px 5px 15px black;
 }
 
-#content article.post time, #content article.post figcaption{
-  font-size:.8em;
-  color:gray;
-  text-transform:uppercase;
-}
-
-#content article.post figure{
-  margin:10px 0;
-}
-
-#content article.post a{
-  color:#2D3540
-}
-
-#content article.post a:hover{
-  text-decoration:none;
-}
-
-#content article.post p{
-  font-size:.8em;
-  line-height: 1.5em;
-}
-
-#content article.post footer{
-  font-size:.8em;
+h2 {
+  text-align: center;
+  grid-column: 1 / 4;
+  grid-row: 4 / 5;
 }
